@@ -1,0 +1,29 @@
+<!--
+点击按钮，对所有元素进行隐藏
+1)所有选择器  *
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../js/jquery.min.js"></script><!--引入Jquery 库-->
+</head>
+<body>
+    <input  type="button" value="按钮"><br/><br/>
+    <p>hello,我是段落</p>
+    <div>hello,我是div</div>
+    <h4>hello,我是标题</h4>
+</body>
+    <script>
+        $(
+                function(){
+                    $("input").click(
+                            function(){
+                                $("*").hide();/*选择所有元素，进行隐藏，包括input标签*/
+                            }
+                    )
+                }
+        )
+    </script>
+</html>

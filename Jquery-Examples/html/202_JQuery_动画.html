@@ -1,0 +1,36 @@
+<!--点击按钮对div进行隐藏，点击按钮对div进行显示，且慢慢隐藏，慢慢显示
+1）两个点击事件
+2）只有一个按钮进行切换，toggle()
+3）toggle()添加速度参数
+
+通过 jQuery，您可以使用 toggle() 方法来切换 hide() 和 show() 方法。
+显示被隐藏的元素，并隐藏已显示的元素：
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../js/jquery.min.js"></script>
+    <style>
+        div{
+            width:300px;
+            height:300px;
+            background-color: greenyellow;
+        }
+    </style>
+</head>
+<body>
+<div></div><br/>
+<input type="button" value="点击隐藏或显示">
+<script>
+    $(
+            function(){
+                $("input").click(function(){
+                    $("div").toggle(5000);
+                })
+            }
+    )
+</script>
+</body>
+</html>

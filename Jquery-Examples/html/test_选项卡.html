@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../js/jquery.min.js"></script>
+    <link type="text/css" rel="stylesheet" href="../css/test_xuan.css">
+</head>
+<body>
+<div class="da">
+    <ul class="ua">
+        <li>选项一</li>
+        <li id="ind2">选项二</li>
+        <li>选项三</li>
+    </ul>
+    <div class="db">
+        <ul style="z-index: 99">图片集合一
+            <li>图片11</li>
+            <li>图片12</li>
+            <li>图片13</li>
+        </ul>
+        <ul>图片集合二
+            <li>图片21</li>
+            <li>图片22</li>
+            <li>图片23</li>
+        </ul>
+        <ul>图片集合三
+            <li>图片31</li>
+            <li>图片32</li>
+            <li>图片23</li>
+        </ul>
+    </div>
+</div>
+<script>
+    $(function(){
+        $(".da>ul>li").click(function() {
+            var index = $(".da>ul>li").index(this);
+            alert(index);
+            $(".db>ul").hide().css('z-index','0');
+            $(".db>ul").eq(index).show().css('z-index','9');
+
+        })
+    })
+</script>
+</body>
+</html>

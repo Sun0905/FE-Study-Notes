@@ -1,0 +1,50 @@
+<!--对h3后面的元素添加背景颜色为粉色，对h3前面的元素添加背景颜色为绿色
+1）遍历----》nextAll()-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../js/jquery.min.js"></script>
+    <style>
+        div{
+            height:500px;
+            width:600px;
+            border:2px solid darkgrey;
+        }
+        div>*{
+            width:500px;
+            height:40px;
+            line-height: 40px;
+            border:2px solid darkgrey;
+            margin:10px;
+        }
+    </style>
+</head>
+<body>
+    <div>div元素
+        <h1>h1</h1>
+        <h2>h2</h2>
+        <h3 id="d3">h3</h3>
+        <h4>h4</h4>
+        <h5>h5</h5>
+        <h6>h6</h6>
+    </div><br/><br/>
+    <input type="button" value="改变背景颜色">
+    <script>
+        $(
+                function(){
+                    var n = $("#d3").nextAll();/*找到h3后面的元素*/
+                    var p = $("#d3").prevAll();/*找到h3后面的元素*/
+                    $("input").click(
+                            function(){
+                                $(n).css("background-color","pink");
+                                $(p).css("background-color","blue")
+                            }
+                    )
+
+                }
+        )
+    </script>
+</body>
+</html>

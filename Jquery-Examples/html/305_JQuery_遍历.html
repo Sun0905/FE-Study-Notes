@@ -1,0 +1,37 @@
+<!--找到指定元素的所有兄弟姐妹，点击按钮，其背景颜色都变成蓝色
+1）遍历--》siblings
+2）改变css样式--》css()
+3）事件--》点击事件-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../js/jquery.min.js"></script>
+    <style>
+        div>p,div>div,div>h1{
+            width:200px;
+            height:40px;
+        }
+    </style>
+</head>
+<body>
+    <div>
+        <p>我是段落1</p>
+        <p id="dp">我是段落2</p>
+        <div>我是div</div>
+        <h1>我是标题</h1>
+    </div><br/><br/>
+    <input type="button" value="点击背景变色">
+<script>
+    $(function(){
+        $("input").click(
+                function(){
+                    var s = $("#dp").siblings();
+                    $(s).css("background-color","pink");
+                }
+        )
+    })
+</script>
+</body>
+</html>

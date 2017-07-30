@@ -1,0 +1,41 @@
+<!--对<li>标签的祖先都添加边框样式
+1）通过一个已知元素找到所有的祖先----parents()
+2）点击按钮，进行触发----点击事件
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../js/jquery.min.js"></script>
+    <style>
+        div{
+            width:300px;
+            height:300px;
+        }
+        ul{
+            width:200px;
+            height:200px;
+        }
+    </style>
+</head>
+<body>
+<div>
+    <ul>
+        <li>列表一</li>
+        <li id="da">列表二</li>
+    </ul>
+</div><br/><br/>
+<input type="button" value="点击增加边框">
+<script>
+    $(function(){
+        var p = $("#da").parents();/*parents()找到所有的祖先，一路向上直到文档的根元素 (<html>)*/
+        $("input").click(
+                function () {
+                    $(p).css("border","1px solid pink");
+                }
+        )
+    })
+</script>
+</body>
+</html>

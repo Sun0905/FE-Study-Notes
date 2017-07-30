@@ -1,0 +1,65 @@
+<!--
+当鼠标移动到div时，背景颜色变成pink
+当鼠标离开div时，背景颜色变成灰色
+当鼠标按下时，弹出对话框，鼠标按下了
+当鼠标放开时，弹出对话狂，鼠标弹起了
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../js/jquery.min.js"></script><!--引入JQuery库-->
+    <style>
+        div{
+            width:400px;
+            height:400px;
+            border:1px solid black;
+            margin:80px;
+        }
+    </style>
+</head>
+<body>
+    <div></div>
+<script>
+    $(
+            function(){
+/*                $("div").mouseenter(
+                        function(){
+                            $(this).css("background-color","pink");
+                        }
+                );
+                $("div").mouseleave(
+                        function(){
+                            $(this).css("background-color","grey");
+                        }
+                );*/
+/*
+                鼠标点击下去后，弹出alert，需要点击弹出框的“确定”按钮，再触发其它事件
+                此时鼠标弹起的动作无法被触发，因此第二句不会被执行
+                $("div").mousedown(
+                        function(){
+                            alert('mousedown鼠标落下了');//第一句
+                        }
+                );
+                $("div").mouseup(
+                        function(){
+                            alert("mousedown鼠标落下了");//第二句
+                        }
+                );*/
+                /*以下都可以执行*/
+                 $("div").mousedown(
+                 function(){
+                        console.log("鼠标落下了");//第一句
+                 }
+                 );
+                 $("div").mouseup(
+                 function(){
+                        alert("mousedown鼠标弹起了");//第二句
+                 }
+                 );
+            }
+    )
+</script>
+</body>
+</html>

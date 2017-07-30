@@ -1,0 +1,30 @@
+<!--点击按钮，选择带有链接属性的元素进行隐藏
+1)链接属性：href
+2)点击事件对象：按钮
+3)作用对象：拥有href属性
+4)动作：隐藏-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../js/jquery.min.js"></script><!--引入jquery库-->
+</head>
+<body>
+    <input type="button" value="按钮"><br/><br/>
+    <p>我是段落</p>
+    <a href="http://www.baidu.com">哈哈哈，我要跳转到百度</a><br/><br/>
+    <a href="http://www.sina.com">哈哈哈，我要跳转到新浪</a>
+    <script>
+        $(
+                function(){
+                    $("input").click(
+                            function(){
+                                $("[href]").hide();
+                            }
+                    )
+                }
+        )
+    </script>
+</body>
+</html>

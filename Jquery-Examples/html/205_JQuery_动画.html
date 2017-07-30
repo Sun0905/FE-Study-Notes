@@ -1,0 +1,57 @@
+<!--加载页面后三个div不展示，点击按钮后淡入
+1）fadeTo()-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../js/jquery.min.js"></script>
+    <style>
+        div{
+            width:200px;
+            height:200px;
+            display: none;/*刚开始div都隐藏*/
+            margin:20px;
+        }
+        #d1{
+            background-color: #00a2d4;
+        }
+        #d2{
+            background-color: burlywood;
+        }
+        #d3{
+            background-color: lightgreen;
+        }
+    </style>
+</head>
+<body>
+<p>以下实例演示了fadeIn()使用了不同参数的效果</p>
+<input type="button" value="点击淡入div元素"><br/><br/>
+<input type="button" value="点击淡出div元素">
+<div id="d1"></div>
+<div id="d2"></div>
+<div id="d3"></div>
+<script>
+    $(
+            function(){
+                $("input:first").click(
+                        function(){
+                            /*设置不同的参数，创造三个div一个一个出现的效果*/
+                            $("div:eq(0)").fadeTo(1000,0.2);
+                            $("div:eq(1)").fadeTo(3000,0.2);
+                            $("div:eq(2)").fadeTo(5000,0.2);
+                        }
+                )
+                $("input:last").click(
+                        function(){
+                            /*设置不同的参数，创造三个div一个一个出现的效果*/
+                            $("div:eq(0)").fadeTo(1000,0.9);
+                            $("div:eq(1)").fadeTo(3000,0.9);
+                            $("div:eq(2)").fadeTo(5000,0.9);
+                        }
+                )
+            }
+    )
+</script>
+</body>
+</html>

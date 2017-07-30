@@ -1,0 +1,32 @@
+<!--
+ul列表每个选项被点击后会隐藏
+1)对象：每个li
+2)触发条件：点击
+3)动作：隐藏
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../js/jquery.min.js"></script><!--引入jquery库-->
+</head>
+<body>
+    <ul>
+         <li>我是选项1，点击后消失</li>
+         <li>我是选项2，点击后消失</li>
+         <li>我是选项3，点击后消失</li>
+    </ul>
+</body>
+    <script>
+        $(document).ready(
+                function(){
+                    $("li").click(
+                            function(){
+                                $(this).hide();
+                            }
+                    )
+                }
+        )
+    </script>
+</html>

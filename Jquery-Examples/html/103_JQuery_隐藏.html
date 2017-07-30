@@ -1,0 +1,29 @@
+<!--点击按钮后，所有的p元素都隐藏
+1)点击事件的对象：按钮
+2)作用于谁：所有的p元素
+3)动作：隐藏
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../js/jquery.min.js"></script><!--引入jquery库-->
+</head>
+<body>
+    <input type="button" value="按钮"><br/><br/>
+    <p>我是段落1</p>
+    <p>我是段落2</p>
+</body>
+    <script>
+        $(
+                function(){
+                    $("input").click(
+                            function(){
+                                $("p").hide();
+                            }
+                    )
+                }
+        )
+    </script>
+</html>

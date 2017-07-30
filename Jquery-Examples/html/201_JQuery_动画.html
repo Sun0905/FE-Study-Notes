@@ -1,0 +1,38 @@
+<!--点击按钮对div进行隐藏，点击按钮对div进行显示，且慢慢隐藏，慢慢显示
+1）两个点击事件
+2）点击第一个按钮进行隐藏
+3）点击第二个按钮进行显示
+4）hide(),show()添加速度参数
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../js/jquery.min.js"></script>
+    <style>
+        div{
+            width:300px;
+            height:300px;
+            background-color: greenyellow;
+        }
+    </style>
+</head>
+<body>
+    <div></div><br/>
+    <input type="button" value="点击隐藏">&nbsp;&nbsp;
+    <input type="button" value="点击显示">
+<script>
+    $(
+            function(){
+                $("input:first").click(function(){
+                    $("div").hide(5000);
+                })
+                $("input:last").click(function(){
+                    $("div").show(5000);
+                })
+            }
+    )
+</script>
+</body>
+</html>

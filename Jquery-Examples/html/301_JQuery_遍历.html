@@ -1,0 +1,31 @@
+<!--已知一个li的id号，找到它的ul增加边框及其颜色。点击按钮进行改变
+1）找父元素
+2）修改css样式css()
+3）点击事件
+-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../js/jquery.min.js"></script>
+    <style>
+
+    </style>
+</head>
+<body>
+<ul>
+    <li>列表一</li>
+    <li id="da">列表二</li>
+</ul><br/><br/>
+<input type="button" value="点击增加ul边框">
+<script>
+    $(function(){
+        $("input").click(function(){
+            var p = $("#da").parent();/*通过parent()函数找到li的父元素*/
+            $(p).css("border","2px solid pink");
+        })
+    })
+</script>
+</body>
+</html>

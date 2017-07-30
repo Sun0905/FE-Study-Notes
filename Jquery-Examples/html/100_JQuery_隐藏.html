@@ -1,0 +1,48 @@
+<!--点击段落就隐藏-->
+<!--分析：
+1）对象
+2）点击动作触发
+3）隐藏-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>隐藏</title>
+    <script src="../js/jquery.min.js"></script><!--引入jquery库-->
+</head>
+<body>
+    <p>我是第一个p元素，点击后就会隐藏掉，请点击！</p>
+    <p>我是第二个p元素，我也会隐藏，请点击！</p>
+</body>
+<script>
+/*
+    $(document).ready();
+    1)当页面加载完后再执行脚本
+    2)在ready()中写脚本
+*/
+/*
+*   $("p")找到所有的p元素
+*   $(this)代表当前p元素
+* */
+/*
+*   $("p").click()
+*   1)当点击p标签后才执行脚本
+*   2)在click()中写点击后的脚本
+*
+* */
+/*
+*   function(){}
+*   脚本函数
+* */
+
+    $(document).ready(
+           function(){
+               $("p").click(function() {
+                         /*  $("p").hide();这样点击某个p元素时，会对所有p元素进行隐藏*/
+                            $(this).hide();/*只对当前被点击的p元素进行隐藏*/
+                       }
+               );
+           }
+    );
+</script>
+</html>

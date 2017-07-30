@@ -1,0 +1,31 @@
+<!--找到<div>中所有的子元素，添加背景颜色-->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="../js/jquery.min.js"></script>
+    <style>
+        #da{
+            width:300px;
+            height:300px;
+        }
+    </style>
+</head>
+<body>
+    <div id="da">
+        <p>我是一个段落</p>
+        <span>我是一个span标签</span>
+        <div>我是一个小div</div>
+    </div><br/><br/>
+    <input type="button" value="点击添加背景颜色">
+<script>
+    $(function(){
+        $("input").click(function(){
+            var c = $("#da").children();
+            $(c).css("background-color","pink");
+        })
+    })
+</script>
+</body>
+</html>
