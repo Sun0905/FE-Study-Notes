@@ -1,0 +1,16 @@
+﻿（1）改名子页面文件夹 templates 为：views
+（2）按页面建立子文件夹 dash, chats, detail, account
+（3）把tab-*.html移到相应的子目录里，并改名
+     比如：page.html 或 p.html
+（4）在每个子页面目录里创建控制器js文件
+     比如：ctrl.js 或 c.js
+     angular.module("dash.ctrl", [])
+     .controller('dashCtrl', [...{}]); 
+（5）index.html 引入各个控制器：
+     <script src="views/dash/c.js"> ....
+（6）app.js 在实例中注入各个控制器
+     angular.module("starter", [
+         'ionic', 'dash.ctrl', ....., 'starter.services'
+     ])
+（7）app.js 改路由配置：templateUrl 与 controller
+（8）能够正常浏览页面 === 成功！
